@@ -162,18 +162,18 @@ public class App extends MultiDexApplication {
 
         // 不添加默认线路
         // 默认线路地址
-        // String defaultApiName = "自备份线路";
-        // String defaultApi = url + URL.DEFAULT_API_URL;
-        // Map<String, String> defaultApiMap = Hawk.get(HawkConfig.API_MAP, new HashMap<>());
-        // defaultApiMap.put(defaultApiName, defaultApi);
-        // List<String> defaultApiHistory = Hawk.get(HawkConfig.API_NAME_HISTORY, new ArrayList<>());
-        // defaultApiHistory.add(defaultApiName);
-        // putDefault(HawkConfig.API_URL, defaultApi);
-        // putDefault(HawkConfig.API_NAME, defaultApiName);
-        // putDefault(HawkConfig.API_NAME_HISTORY, defaultApiHistory);
-        // putDefault(HawkConfig.API_MAP, defaultApiMap);
+        String defaultApiName = "自备份线路";
+        String defaultApi = url + URL.DEFAULT_API_URL;
+        Map<String, String> defaultApiMap = Hawk.get(HawkConfig.API_MAP, new HashMap<>());
+        defaultApiMap.put(defaultApiName, defaultApi);
+        List<String> defaultApiHistory = Hawk.get(HawkConfig.API_NAME_HISTORY, new ArrayList<>());
+        defaultApiHistory.add(defaultApiName);
+        putDefault(HawkConfig.API_URL, defaultApi);
+        putDefault(HawkConfig.API_NAME, defaultApiName);
+        putDefault(HawkConfig.API_NAME_HISTORY, defaultApiHistory);
+        putDefault(HawkConfig.API_MAP, defaultApiMap);
         // 不添加默认直播源
-        // putDefault(HawkConfig.LIVE_URL, url + URL.DEFAULT_LIVE_URL);
+        putDefault(HawkConfig.LIVE_URL, url + URL.DEFAULT_LIVE_URL);
 
         putDefault(HawkConfig.DEFAULT_STORE_API, defaultStoreApi);
         putDefault(HawkConfig.PROXY_URL_HISTORY, proxyUrlHistory);
