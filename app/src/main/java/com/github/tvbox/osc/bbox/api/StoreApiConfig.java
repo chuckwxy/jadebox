@@ -58,11 +58,10 @@ public class StoreApiConfig {
         HashMap<String, String> storeMap = Hawk.get(HawkConfig.STORE_API_MAP, new HashMap<>());
         ArrayList<String> storeNameHistory = Hawk.get(HawkConfig.STORE_API_NAME_HISTORY, new ArrayList<>());
 
-        /*
         if (storeMap.isEmpty()) {
             Toast.makeText(context, "仓库为空，使用备份仓库", Toast.LENGTH_SHORT).show();
             String name = "自备份仓库";
-            String sotreApi = Hawk.get(HawkConfig.DEFAULT_STORE_API, Hawk.get(HawkConfig.PROXY_URL, "https://raw.bunnylblbblbl.eu.org/") + URL.DEFAULT_STORE_API_URL);
+            String sotreApi = Hawk.get(HawkConfig.DEFAULT_STORE_API, Hawk.get(HawkConfig.PROXY_URL, URL.DEFAULT_STORE_API_URL));
             storeMap.put(name, sotreApi);
             storeNameHistory.add(name);
             Hawk.put(HawkConfig.STORE_API_NAME_HISTORY, storeNameHistory);
@@ -70,7 +69,6 @@ public class StoreApiConfig {
             Hawk.put(HawkConfig.STORE_API_MAP, storeMap);
             Hawk.put(HawkConfig.STORE_API, sotreApi);
         }
-        */
 
         String storeUrl = storeMap.isEmpty() ? URL.DEFAULT_STORE_API_URL:storeMap.get(Hawk.get(HawkConfig.STORE_API_NAME, ""));
 
