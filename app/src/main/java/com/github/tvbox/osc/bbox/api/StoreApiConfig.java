@@ -61,7 +61,7 @@ public class StoreApiConfig {
         if (storeMap.isEmpty()) {
             Toast.makeText(context, "仓库为空，使用备份仓库", Toast.LENGTH_SHORT).show();
             String name = "自备份仓库";
-            String sotreApi = Hawk.get(HawkConfig.DEFAULT_STORE_API, Hawk.get(HawkConfig.PROXY_URL, URL.DEFAULT_STORE_API_URL));
+            String sotreApi = Hawk.get(HawkConfig.DEFAULT_STORE_API, URL.DEFAULT_STORE_API_URL);
             storeMap.put(name, sotreApi);
             storeNameHistory.add(name);
             Hawk.put(HawkConfig.STORE_API_NAME_HISTORY, storeNameHistory);
