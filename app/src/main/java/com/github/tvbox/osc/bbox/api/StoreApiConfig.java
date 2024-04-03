@@ -57,7 +57,8 @@ public class StoreApiConfig {
         // 获取多仓地址
         HashMap<String, String> storeMap = Hawk.get(HawkConfig.STORE_API_MAP, new HashMap<>());
         ArrayList<String> storeNameHistory = Hawk.get(HawkConfig.STORE_API_NAME_HISTORY, new ArrayList<>());
-
+        
+        /*
         if (storeMap.isEmpty()) {
             Toast.makeText(context, "仓库为空，使用备份仓库", Toast.LENGTH_SHORT).show();
             String name = "自备份仓库";
@@ -69,7 +70,8 @@ public class StoreApiConfig {
             Hawk.put(HawkConfig.STORE_API_MAP, storeMap);
             Hawk.put(HawkConfig.STORE_API, sotreApi);
         }
-
+        */
+        
         String storeUrl = storeMap.isEmpty() ? URL.DEFAULT_STORE_API_URL:storeMap.get(Hawk.get(HawkConfig.STORE_API_NAME, ""));
 
         LOG.i("订阅仓库地址：" + storeUrl);
