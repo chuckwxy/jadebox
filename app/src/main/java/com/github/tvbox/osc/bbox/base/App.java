@@ -100,7 +100,7 @@ public class App extends MultiDexApplication {
     private void initParams() {
         // Hawk
         Hawk.init(this).build();
-
+        putDefault(HawkConfig.DOH_URL, 1);
         putDefault(HawkConfig.DEBUG_OPEN, false);
         putDefault(HawkConfig.PLAY_TYPE, 1);
         putDefault(HawkConfig.HOME_REC, 1);
