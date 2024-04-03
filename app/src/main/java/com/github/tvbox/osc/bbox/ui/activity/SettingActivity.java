@@ -111,7 +111,7 @@ public class SettingActivity extends BaseActivity {
         currentLive = Hawk.get(HawkConfig.LIVE_URL, "");
         homeSourceKey = ApiConfig.get().getHomeSourceBean().getKey();
         homeRec = Hawk.get(HawkConfig.HOME_REC, 0);
-        dnsOpt = Hawk.get(HawkConfig.DOH_URL, 0);
+        dnsOpt = Hawk.get(HawkConfig.DOH_URL, 1);
         List<String> sortList = new ArrayList<>();
         sortList.add("设置其他");
         sortAdapter.setNewData(sortList);
@@ -183,7 +183,7 @@ public class SettingActivity extends BaseActivity {
                 !currentApi.equals(Hawk.get(HawkConfig.API_URL, ""))  ||
                 !currentLive.equals(Hawk.get(HawkConfig.LIVE_URL, "")) ||
                 homeRec != Hawk.get(HawkConfig.HOME_REC, 0) ||
-                dnsOpt != Hawk.get(HawkConfig.DOH_URL, 0)) {
+                dnsOpt != Hawk.get(HawkConfig.DOH_URL, 1)) {
             AppManager.getInstance().finishAllActivity();
             if (currentApi.equals(Hawk.get(HawkConfig.API_URL, "")) &
                     (currentLive.equals(Hawk.get(HawkConfig.LIVE_URL, "")))) {
